@@ -2,13 +2,12 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Глобальная переменная для подсчета просмотров
 page_view_count = 0
 
 @app.route("/")
 def home():
     global page_view_count
-    page_view_count += 1  # Увеличиваем счетчик
+    page_view_count += 1
     return render_template("index.html")
 
 @app.route("/views")
